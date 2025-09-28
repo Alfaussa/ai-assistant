@@ -1,4 +1,4 @@
-// pages/api/chat.js
+
 
 import { Configuration, OpenAIApi } from 'openai';
 //Configuration — объект с настройками API (например, ключ доступа)
