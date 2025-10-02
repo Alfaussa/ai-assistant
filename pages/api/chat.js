@@ -3,7 +3,7 @@
 // const openai = new OpenAI({
 //   apiKey: process.env.OPENAI_API_KEY,
 // });
-
+``
 
 export default async function handler(req, res) {//API-обработчик! req — данные запроса (method, headers, body и т.д.), res — ответ обратно  https://nextjs.org/docs/pages/building-your-application/routing/api-routes
   if (req.method !== 'POST') {//Проверка что метод запроса — POST
@@ -20,7 +20,7 @@ export default async function handler(req, res) {//API-обработчик! req
      method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        model: "deepseek-r1",
+        model: "gemma3:4b",
         prompt: userPrompt,
 }),
 });
