@@ -1,4 +1,5 @@
  
+import BoilerCalculator from '../components/BoilerCalculator';
 import Chat from '../components/Chat';
 
 
@@ -12,7 +13,9 @@ export default function Home()
         <title>AI Помощник</title>
         
          
-         <main> <Chat /> </main>
+         <main> <Chat /> 
+         <BoilerCalculator/>
+         </main>
           </> ; 
 
          }
