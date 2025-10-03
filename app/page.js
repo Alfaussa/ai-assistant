@@ -1,6 +1,6 @@
  
 import Chat from '../components/Chat';
-import Chat1 from '../components/CHAT1';
+
 
 export const metadata = {
   title: 'My page title',
@@ -12,7 +12,7 @@ export default function Home()
         <title>AI Помощник</title>
         
          
-         <main> <Chat1 /> </main>
+         <main> <Chat /> </main>
           </> ; 
 
          }
