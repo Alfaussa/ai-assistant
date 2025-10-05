@@ -36,7 +36,6 @@ export default function Chat() {
 
   return (
     <div style={{ maxWidth: 600, margin: '0 auto', padding: 20 }}>
-      <h2>🧠 AI-assistant</h2>
 
       <div style={{ minHeight: 200, marginBottom: 10 }}>
         {messages.map((msg, index) => (

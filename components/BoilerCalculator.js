@@ -7,6 +7,8 @@ export default function BoilerCalculator(){
 const [area, setArea] = useState('');
 const [power, setPower] = useState(null);
 
+
+
 const calculatePower = () => {
     if(!area || isNaN(area)){
         setPower("Enter correct number")
