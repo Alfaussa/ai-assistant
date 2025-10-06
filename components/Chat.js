@@ -37,7 +37,7 @@ export default function Chat() {
   return (
     <div style={{ maxWidth: 600, margin: '0 auto', padding: 20 }}>
 
-      <div style={{ minHeight: 200, marginBottom: 10 }}>
+    <div style={{ border: "1px solid #ccc", minHeight: 200, padding: 10, marginBottom: 10 }}>
         {messages.map((msg, index) => (
           <div
             key={index}
@@ -48,17 +48,17 @@ export default function Chat() {
             </p>
           </div>
         ))}
-        {loading && <p><em>Печатает...</em></p>}
+        {loading && <p><em>Typing...</em></p>}
       </div>
 
-      <div style={{ display: 'flex', gap: 8 }}>
+      <div style={{ display: 'flex', gap: 8}}>
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
-          style={{ flex: 1, padding: 8 }}
-          placeholder="Введите сообщение..."
+          placeholder="Type a message..."
+          style={{ width: "80%", padding: 8, marginRight: 10 }}
         />
         <button onClick={sendMessage} disabled={loading}>
           Отправить

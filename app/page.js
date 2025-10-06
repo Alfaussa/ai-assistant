@@ -1,10 +1,8 @@
  
 import BoilerCalculator from '../components/BoilerCalculator';
 import Chat from '../components/Chat';
-import {
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend
-} from "recharts";
 import { MessageCircle, Flame, BarChart3, Info } from "lucide-react";
+import Graph from '../components/Graph';
 
 
 export const metadata = {
@@ -12,14 +10,7 @@ export const metadata = {
   description: 'My page description',
 }
 export default function Home() {
- const data = [
-    { area: 50, power: 5 },
-    { area: 100, power: 10 },
-    { area: 150, power: 15 },
-    { area: 200, power: 20 },
-    { area: 250, power: 25 },
-  ];
-  
+
   
   
   
@@ -53,11 +44,14 @@ export default function Home() {
          <Chat/>
         </section>
 
-        <section id="calc">
+              <section id="calc" style={{ marginBottom: "40px" }}>
           <h2><Flame size={20} />Boiler Sizing Calculator</h2>
           <BoilerCalculator/>
         </section>
-
+        <section id="chart">
+        <h2>  <BarChart3 size={20} /> Graph: Power vs. Area</h2>
+        <Graph/>
+      </section>
         <section id="about">
           <h2><Info size={20} /> About</h2>
           <p>Этот проект помогает рассчитать отопление и задать вопросы AI.</p>
