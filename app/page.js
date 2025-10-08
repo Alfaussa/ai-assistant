@@ -2,14 +2,14 @@
 import BoilerCalculator from '../components/BoilerCalculator';
 import Chat from '../components/Chat';
 import { MessageCircle, Flame, BarChart3, Info } from "lucide-react";
-import Graph from '../components/Graph';
+import BoilerChart from '../components/BoilerChart';
 
 
 export const metadata = {
   title: 'My page title',
   description: 'My page description',
 }
-export default function Home() {
+export default function Home({history, setHistory}) {
 
   
   
@@ -43,23 +43,25 @@ export default function Home() {
           <h2><MessageCircle size={20} /> Chat</h2>
          <Chat/>
         </section>
-
-              <section id="calc" style={{ marginBottom: "40px" }}>
+        <section id="calc" style={{ marginBottom: "40px" }}>
           <h2><Flame size={20} />Boiler Sizing Calculator</h2>
           <BoilerCalculator/>
         </section>
-        <section id="chart">
+        {/* <section id="chart">
         <h2>  <BarChart3 size={20} /> Graph: Power vs. Area</h2>
-        <Graph/>
-      </section>
+        <BoilerChart
+        data={history}
+        setHistory={setHistory}
+        />
+      </section> */}
         <section id="about">
           <h2><Info size={20} /> About</h2>
           <p>Этот проект помогает рассчитать отопление и задать вопросы AI.</p>
         </section>
       </main>
 
-      <footer>
-        <p>© 2025 Строй-AI</p>
+  <footer style={{ marginTop: "40px", borderTop: "1px solid #ccc", paddingTop: "10px" }}>
+        <p>© 2025 AI для строительства | Контакты: info@example.com</p>
       </footer>
       </div>
     

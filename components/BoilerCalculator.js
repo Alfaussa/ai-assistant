@@ -1,13 +1,16 @@
 "use client"
 
 import { useState } from "react";
-
+import BoilerChart
+ from "./BoilerChart";
 export default function BoilerCalculator(){
 
 const [area, setArea] = useState('');
+const [climate, setClimate] = useState("1.0");
+const [insulation, setInsulation] = useState("1.0");
+const [ceiling, setCeiling] = useState("standard");
 const [power, setPower] = useState(null);
-
-
+const [history, setHistory] = useState([]);
 
 const calculatePower = () => {
     if(!area || isNaN(area)){
@@ -15,8 +18,26 @@ const calculatePower = () => {
         return;
     }
 
-    const result = Math.ceil(area * 0.1)
-    setPower(result)
+    let base= area * 0.1;
+    let result = base * parseFloat(climate) * parseFloat(insulation);
+    
+    if (ceiling === 'high'){
+        result *= 1.2;
+    }
+    const finalResult = result.toFixed(1)
+    setPower(finalResult);
+
+    setHistory([...history,
+        {
+        name: `${area} m² | C:${climate} I:${insulation} ${ceiling === "high" ? "HighCeil" : "Std"}`,
+        power: Number(finalResult),
+        }
+    ])
+  
+   
+  };
+      const printReport = () => {
+    window.print();
 }
 return(
 
@@ -31,15 +52,52 @@ return(
           style={{ width: "100%", padding: 8, marginTop: 8, marginBottom: 12 }}
         />
       </label>
+        <div style={{ marginBottom: 10 }}>
+        <label>🌍 Climate: </label>
+        <select value={climate} onChange={(e) => setClimate(e.target.value)}>
+          <option value="0.9">Warm</option>
+          <option value="1.0">Moderate</option>
+          <option value="1.2">Cold</option>
+        </select>
+      </div>
+       <div style={{ marginBottom: 10 }}>
+        <label>🏠 Insulation: </label>
+        <select
+          value={insulation}
+          onChange={(e) => setInsulation(e.target.value)}
+        >
+          <option value="0.8">Excellent</option>
+          <option value="1.0">Average</option>
+          <option value="1.2">Poor</option>
+        </select>
+      </div>
+      <div style={{ marginBottom: 10 }}>
+        <label>📏 Ceiling height: </label>
+        <select
+          value={ceiling}
+          onChange={(e) => setCeiling(e.target.value)}
+        >
+          <option value="standard">Standard (≤ 3 m)</option>
+          <option value="high">High (&gt; 3 m)</option>
+        </select>
+      </div>
       <button onClick={calculatePower} style={{ padding: "8px 12px" }}>
         Рассчитать
       </button>
       {power && (
         <p style={{ marginTop: 15 }}>
-          ✅ Рекомендуемая мощность котла: <strong>{power} кВт</strong>
+          ✅ Recommended boiler power: <strong>{power} кВт</strong>
         </p>
       )}
+       <BoilerChart history={history} setHistory={setHistory}/>
+
+        <button onClick={printReport} style={{ background: "#10b981" }}>
+        🖨 Print report
+      </button>
     </div>
+
+  
+
   );
 
 
