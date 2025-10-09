@@ -1,9 +1,9 @@
  
 import BoilerCalculator from '../components/BoilerCalculator';
 import Chat from '../components/Chat';
-import { MessageCircle, Flame, BarChart3, Info } from "lucide-react";
-import BoilerChart from '../components/BoilerChart';
+import { MessageCircle, Flame, BarChart3, Info, Heater } from "lucide-react";
 
+ 
 
 export const metadata = {
   title: 'My page title',
@@ -20,9 +20,21 @@ export default function Home({history, setHistory}) {
 
       <div style={{ maxWidth: "900px", margin: "0 auto", padding: "20px" }}>
       {/*header*/}
-      <header>
-        <h1>🏗️ Smart Boiler Selector</h1>
-        <nav style={{ display: 'flex', gap: '20px', fontSize: '18px' }}>
+      <header style={{position: "fixed", top: 0, left: 0,width: "100%",
+    background: "rgba(255, 255, 255, 0.9)", // немного прозрачности
+    backdropFilter: "blur(8px)", // мягкий эффект стекла
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: "8px 16px",
+    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+      flexWrap: "wrap", 
+    zIndex: 1000, // чтобы всегда был поверх
+  }}>
+        <div style={{display:'flex'}}>
+        <Heater size={36} style={{paddingTop:'4px', marginRight:'5px',  minWidth: "36px",minHeight: "36px", marginRight: "8px",}} /> 
+        <h1 style={{marginBottom:'10px'}}>Smart Boiler Selector</h1></div>
+        <nav style={{ display: 'flex', gap: '20px', fontSize: '18px', display: "flex",flexWrap: "wrap", justifyContent: "center",marginRight: "20px;"}}>
       <a href="#chat" style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
         <MessageCircle size={20} /> Chat
       </a>
