@@ -29,12 +29,17 @@ const calculatePower = () => {
 
     setHistory([...history,
         {
-        name: `${area} m² | C:${climate} I:${insulation} ${ceiling === "high" ? "HighCeil" : "Std"}`,
+        area:area,
+        climate: climate,
+        insulation: insulation,
+        ceiling: ceiling,
         power: Number(finalResult),
+        name: 'calc no:' + (history.length + 1),
         }
+     
     ])
-  
-   
+
+      
   };
       const printReport = () => {
     window.print();

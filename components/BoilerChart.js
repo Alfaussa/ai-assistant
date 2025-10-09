@@ -17,7 +17,7 @@ export default function BoilerChart({history, setHistory}){
 //   ];
 
 const clearHistory = () => setHistory([]);
-
+       console.log(history)
 
     return(
 <div>
@@ -37,7 +37,29 @@ const clearHistory = () => setHistory([]);
       >
         ❌ Clear history
       </button>
-
+          <table border="1" cellPadding="6" style={{ marginBottom: 20, borderCollapse: "collapse" }}>
+            <thead>
+              <tr>
+                <th>Area (m²)</th>
+                <th>Climate</th>
+                <th>Insulation</th>
+                <th>Ceiling</th>
+                <th>Power (kW)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {history.map((item, i) => (
+                <tr key={i}>
+                  <td>{item.area}</td>
+                  <td>{item.climate}</td>
+                  <td>{item.insulation}</td>
+                  <td>{item.ceiling}</td>
+                  <td>{item.power}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+     
            <BarChart width={600} height={300} data={history}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" angle={-30} textAnchor="end" interval={0} />
