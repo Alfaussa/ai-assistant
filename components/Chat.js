@@ -35,22 +35,45 @@ export default function Chat() {
   };
 
   return (
-    <div style={{ maxWidth: 600, margin: '0 auto', padding: 20 }}>
+    <div style={{ maxWidth: 800 , margin: '0 auto', padding: 20 }}>
+<div
+  style={{
+    position: "relative",
+    border: "1px solid #ccc",
+    minHeight: 200,
+    padding: 10,
+    marginBottom: 10,
+    overflow: "hidden",
+  }}
+>
+  {/* Фон (под содержимым) */}
+  <div
+    style={{
+      backgroundImage: "url('/shema.png')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      opacity: 0.2, // полупрозрачный
+      position: "absolute",
+      inset: 0,
+      zIndex: 0,
+    }}
+  ></div>
 
-    <div style={{ border: "1px solid #ccc", minHeight: 200, padding: 10, marginBottom: 10 }}>
-        {messages.map((msg, index) => (
-          <div
-            key={index}
-            style={{ textAlign: msg.role === 'user' ? 'right' : 'left' }}
-          >
-            <p>
-              <strong>{msg.role === 'user' ? 'Вы' : 'AI'}:</strong> {msg.content}
-            </p>
-          </div>
-        ))}
-        {loading && <p><em>Typing...</em></p>}
+  {/* Контент (поверх фона) */}
+  <div style={{ position: "relative", zIndex: 1 }}>
+    {messages.map((msg, index) => (
+      <div
+        key={index}
+        style={{ textAlign: msg.role === "user" ? "right" : "left" }}
+      >
+        <p>
+          <strong>{msg.role === "user" ? "Вы" : "AI"}:</strong> {msg.content}
+        </p>
       </div>
-
+    ))}
+    {loading && <p><em>Typing...</em></p>}
+  </div>
+</div>
       <div style={{ display: 'flex', gap: 8}}>
         <input
           type="text"

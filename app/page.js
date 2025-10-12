@@ -34,7 +34,7 @@ export default function Home({history, setHistory}) {
         <div style={{display:'flex'}}>
         <Heater size={36} style={{paddingTop:'4px', marginRight:'5px',  minWidth: "36px",minHeight: "36px", marginRight: "8px",}} /> 
         <h1 style={{marginBottom:'10px'}}>Smart Boiler Selector</h1></div>
-        <nav style={{ display: 'flex', gap: '20px', fontSize: '18px', display: "flex",flexWrap: "wrap", justifyContent: "center",marginRight: "20px;"}}>
+        <nav style={{ display: 'flex', gap: '20px', fontSize: '18px', display: "flex",flexWrap: "wrap", justifyContent: "center",marginRight: "30px"}}>
       <a href="#chat" style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
         <MessageCircle size={20} /> Chat
       </a>
