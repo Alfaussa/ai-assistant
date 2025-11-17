@@ -44,20 +44,12 @@ export default function Chat() {
     padding: 10,
     marginBottom: 10,
     overflow: "hidden",
+    borderRadius:8,
+    backgroundColor:'white'
   }}
 >
-  {/* Фон (под содержимым) */}
-  <div
-    style={{
-      backgroundImage: "url('/shema.png')",
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      opacity: 0.2, // полупрозрачный
-      position: "absolute",
-      inset: 0,
-      zIndex: 0,
-    }}
-  ></div>
+
+
 
   {/* Контент (поверх фона) */}
   <div style={{ position: "relative", zIndex: 1 }}>
@@ -80,11 +72,11 @@ export default function Chat() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
-          placeholder="Type a message..."
+          placeholder="Ask your question..."
           style={{ width: "80%", padding: 8, marginRight: 10 }}
         />
-        <button onClick={sendMessage} disabled={loading}>
-          Отправить
+        <button  onClick={sendMessage} disabled={loading}>
+          Send
         </button>
       </div>
     </div>

@@ -18,7 +18,11 @@ export default function Home({history, setHistory}) {
   
   return (
 
-      <div style={{ maxWidth: "900px", margin: "0 auto", padding: "20px" }}>
+      <div style={{ maxWidth: "900px", margin: "0 auto", padding: "20px",
+        backgroundColor: '#D9D7DD' 
+
+    
+      }}>
       {/*header*/}
       <header style={{position: "fixed", top: 0, left: 0,width: "100%",
     background: "rgba(255, 255, 255, 0.9)", // немного прозрачности
@@ -31,7 +35,9 @@ export default function Home({history, setHistory}) {
       flexWrap: "wrap", 
     zIndex: 1000, // чтобы всегда был поверх
   }}>
-        <div style={{display:'flex'}}>
+        <div style={{display:'flex'
+          
+        }}>
         <Heater size={36} style={{paddingTop:'4px', marginRight:'5px',  minWidth: "36px",minHeight: "36px", marginRight: "8px",}} /> 
         <h1 style={{marginBottom:'10px'}}>Smart Boiler Selector</h1></div>
         <nav style={{ display: 'flex', gap: '20px', fontSize: '18px', display: "flex",flexWrap: "wrap", justifyContent: "center",marginRight: "30px"}}>
@@ -51,7 +57,7 @@ export default function Home({history, setHistory}) {
       </header>
 
       <main>
-        <section id="chat" style={{ marginBottom: "40px" }}>
+        <section id="chat" style={{ marginBottom: "40px"}}>
           <h2><MessageCircle size={20} /> Chat</h2>
          <Chat/>
         </section>
