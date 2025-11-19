@@ -1,8 +1,9 @@
 "use client"
 
 import { useState } from "react";
-import BoilerChart
- from "./BoilerChart";
+import BoilerChart from "./BoilerChart";
+import { Calculator, SunSnow, BrickWallFire, Ruler, Printer, SquareCheckBig} from "lucide-react";
+
 export default function BoilerCalculator(){
 
 const [area, setArea] = useState('');
@@ -47,7 +48,7 @@ const calculatePower = () => {
 return(
 
    <div style={{ maxWidth: 400, margin: "20px auto", padding: 20, border: "1px solid #ccc", borderRadius: 8 }}>
-      <h3>🔧 Калькулятор мощности котла</h3>
+      <h3>  <Calculator /> Калькулятор мощности котла</h3>
       <label>
         Площадь дома (м²):
         <input
@@ -58,7 +59,7 @@ return(
         />
       </label>
         <div style={{ marginBottom: 10 }}>
-        <label>🌍 Climate: </label>
+        <label><SunSnow /> Climate: </label>
         <select value={climate} onChange={(e) => setClimate(e.target.value)}>
           <option value="0.9">Warm</option>
           <option value="1.0">Moderate</option>
@@ -66,7 +67,7 @@ return(
         </select>
       </div>
        <div style={{ marginBottom: 10 }}>
-        <label>🏠 Insulation: </label>
+        <label><BrickWallFire />Insulation: </label>
         <select
           value={insulation}
           onChange={(e) => setInsulation(e.target.value)}
@@ -77,7 +78,7 @@ return(
         </select>
       </div>
       <div style={{ marginBottom: 10 }}>
-        <label>📏 Ceiling height: </label>
+        <label><Ruler /> Ceiling height: </label>
         <select
           value={ceiling}
           onChange={(e) => setCeiling(e.target.value)}
@@ -91,13 +92,13 @@ return(
       </button>
       {power && (
         <p style={{ marginTop: 15 }}>
-          ✅ Recommended boiler power: <strong>{power} кВт</strong>
+          <SquareCheckBig /> Recommended boiler power: <strong>{power} кВт</strong>
         </p>
       )}
        <BoilerChart history={history} setHistory={setHistory}/>
 
         <button onClick={printReport} style={{ background: "#10b981" }}>
-        🖨 Print report
+        <Printer /> Print report
       </button>
     </div>
 

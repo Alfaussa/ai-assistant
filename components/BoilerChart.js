@@ -2,11 +2,13 @@
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from "recharts";
+import {ChartColumn, Trash } from "lucide-react";
+
 
 export default function BoilerChart({history, setHistory}){
 
   if (!history || history.length === 0) {
-    return <p style={{ marginTop: 20 }}>📊 Нет данных для отображения</p>;
+    return <p style={{ marginTop: 20 }}><ChartColumn/> Нет данных для отображения</p>;
   }
 //  const data = [
 //     { area: 50, power: 5 },
@@ -23,7 +25,7 @@ const clearHistory = () => setHistory([]);
 <div>
   
         <div style={{ marginTop: 30 }}>
-          <h3>📊 Calculation history</h3>
+          <h3><ChartColumn /> Calculation history</h3>
 
           <button
         onClick={clearHistory}
@@ -35,7 +37,7 @@ const clearHistory = () => setHistory([]);
           borderRadius: "6px",
         }}
       >
-        ❌ Clear history
+        <Trash />Clear history
       </button>
           <table border="1" cellPadding="6" style={{ marginBottom: 20, borderCollapse: "collapse" }}>
             <thead>
