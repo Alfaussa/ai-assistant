@@ -74,12 +74,12 @@ export default function Home({history, setHistory}) {
       </section> */}
         <section id="about">
           <h2><Info size={20} /> About</h2>
-          <p>Этот проект помогает рассчитать отопление и задать вопросы AI.</p>
+          <p>This project helps calculate heating and ask your questions.</p>
         </section>
       </main>
 
   <footer style={{ marginTop: "40px", borderTop: "1px solid #ccc", paddingTop: "10px" }}>
-        <p>© 2025 AI для строительства | Контакты: info@example.com</p>
+        <p>© 2025 AI for construction | Contacts: info@example.com</p>
       </footer>
       </div>
     

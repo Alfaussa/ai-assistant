@@ -48,7 +48,10 @@ const calculatePower = () => {
 return(
 
    <div style={{ maxWidth: 400, margin: "20px auto", padding: 20, border: "1px solid #ccc", borderRadius: 8 }}>
-      <h3>  <Calculator /> Калькулятор мощности котла</h3>
+  <h3 style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+  <Calculator />
+  Калькулятор мощности котла
+</h3>
       <label>
         Площадь дома (м²):
         <input
@@ -58,16 +61,18 @@ return(
           style={{ width: "100%", padding: 8, marginTop: 8, marginBottom: 12 }}
         />
       </label>
-        <div style={{ marginBottom: 10 }}>
-        <label><SunSnow /> Climate: </label>
+        <div style={{ marginBottom: 10,display: "flex",gap: "8px", alignItems: "center" }}>
+          <SunSnow />
+        <label > Climate: </label>
         <select value={climate} onChange={(e) => setClimate(e.target.value)}>
           <option value="0.9">Warm</option>
           <option value="1.0">Moderate</option>
           <option value="1.2">Cold</option>
         </select>
       </div>
-       <div style={{ marginBottom: 10 }}>
-        <label><BrickWallFire />Insulation: </label>
+       <div style={{ marginBottom: 10,display: "flex",gap: "8px", alignItems: "center" }}>
+        <BrickWallFire />
+        <label>Insulation: </label>
         <select
           value={insulation}
           onChange={(e) => setInsulation(e.target.value)}
@@ -77,9 +82,10 @@ return(
           <option value="1.2">Poor</option>
         </select>
       </div>
-      <div style={{ marginBottom: 10 }}>
-        <label><Ruler /> Ceiling height: </label>
-        <select
+      <div style={{ marginBottom: 10,display: "flex",gap: "8px", alignItems: "center" }}>
+        <Ruler /> 
+        <label>Ceiling height: </label>
+        <select   
           value={ceiling}
           onChange={(e) => setCeiling(e.target.value)}
         >
@@ -88,16 +94,16 @@ return(
         </select>
       </div>
       <button onClick={calculatePower} style={{ padding: "8px 12px" }}>
-        Рассчитать
+        Calculate
       </button>
       {power && (
-        <p style={{ marginTop: 15 }}>
+        <p style={{ marginTop: 15, display: "flex", alignItems: "center", gap: "8px"  }}>
           <SquareCheckBig /> Recommended boiler power: <strong>{power} кВт</strong>
         </p>
       )}
        <BoilerChart history={history} setHistory={setHistory}/>
 
-        <button onClick={printReport} style={{ background: "#10b981" }}>
+        <button onClick={printReport} style={{ padding: "8px 12px", display: "flex",gap: "8px", alignItems: "center"}}>
         <Printer /> Print report
       </button>
     </div>

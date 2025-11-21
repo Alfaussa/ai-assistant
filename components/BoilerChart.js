@@ -8,7 +8,7 @@ import {ChartColumn, Trash } from "lucide-react";
 export default function BoilerChart({history, setHistory}){
 
   if (!history || history.length === 0) {
-    return <p style={{ marginTop: 20 }}><ChartColumn/> Нет данных для отображения</p>;
+    return <p style={{ marginTop: 20, display: "flex", alignItems: "center", gap: "8px"  }}><ChartColumn/> No data to display</p>;
   }
 //  const data = [
 //     { area: 50, power: 5 },

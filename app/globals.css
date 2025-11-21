@@ -30,7 +30,7 @@ nav a:hover {
 }
 
 /* Чат и калькулятор */
-input, button {
+input, button, select {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   border-radius: 10px;
