@@ -1,7 +1,7 @@
- 
+
 import BoilerCalculator from '../components/BoilerCalculator';
 import Chat from '../components/Chat';
-import { MessageCircle, Flame, BarChart3, Info, Heater } from "lucide-react";
+import {Calculator, MessageCircle, Flame, BarChart3, Info, Heater } from "lucide-react";
 
  
 
@@ -18,7 +18,7 @@ export default function Home({history, setHistory}) {
   
   return (
 
-      <div style={{ maxWidth: "900px", margin: "0 auto", padding: "20px",
+      <div style={{ maxWidth: "1000px", margin: "0 auto", padding: "20px",
         backgroundColor: '#D9D7DD' 
 
     
@@ -62,19 +62,26 @@ export default function Home({history, setHistory}) {
          <Chat/>
         </section>
         <section id="calc" style={{ marginBottom: "40px" }}>
-          <h2><Flame size={20} />Boiler Sizing Calculator</h2>
+          <h2  style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <Calculator />Boiler power calculator</h2>
+     
+
           <BoilerCalculator/>
+         
         </section>
         {/* <section id="chart">
         <h2>  <BarChart3 size={20} /> Graph: Power vs. Area</h2>
-        <BoilerChart
+        <BoilerChartPariatur cillum anim ad reprehenderit dolore. Reprehenderit labore dolore deserunt aliqua reprehenderit ea tempor minim ea irure ea. Consequat ea qui enim voluptate consequat in enim esse nulla ex.
         data={history}
-        setHistory={setHistory}
+        setHistory={setHistory}~`
         />
       </section> */}
         <section id="about">
           <h2><Info size={20} /> About</h2>
-          <p>This project helps calculate heating and ask your questions.</p>
+          <p>This project helps calculate heating and ask your questions.
+           Fugiat exercitation amet ullamco anim magna velit ut veniam consequat consequat commodo reprehenderit ut. Tempor culpa occaecat aliquip sunt do duis deserunt ut consectetur in ad amet elit quis. Nostrud cupidatat aliqua quis elit magna officia dolore magna ea. Dolor ut elit dolor voluptate aliqua veniam exercitation velit elit dolore.
+          </p>
+          
         </section>
       </main>
 
