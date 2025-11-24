@@ -36,8 +36,8 @@ function Outline({ width, height, position }) {
 function Door({ loss }) {
   return (
     <>
-      <Outline width={0.52} height={0.82} position={[0, -0.25, 1.02]} />
-      <mesh position={[0, -0.25, 1.001]}>
+      <Outline width={0.52} height={0.82} position={[0, -0.25, 1.07]} />
+      <mesh position={[0, -0.25, 1.05]}>
         <boxGeometry args={[0.5, 0.8, 0.05]} />
         <meshStandardMaterial color={heatColor(loss)} />
       </mesh>
@@ -45,18 +45,18 @@ function Door({ loss }) {
   );
 }
 
+
 function Window({ loss }) {
   return (
     <>
-      <Outline width={0.62} height={0.42} position={[0.7, 0.2, -1.02]} />
-      <mesh position={[0.7, 0.2, -1.001]}>
+      <Outline width={0.62} height={0.42} position={[0.7, 0.2, -1.07]} />
+      <mesh position={[0.7, 0.2, -1.05]}>
         <boxGeometry args={[0.6, 0.4, 0.05]} />
         <meshStandardMaterial color={heatColor(loss)} />
       </mesh>
     </>
   );
 }
-
 function Chimney() {
   return (
     <mesh position={[0.5, 1.3, 0]}>
@@ -84,7 +84,7 @@ function Wall({ pos, rot, loss }) {
   );
 }
 
-export default function HeatLossHouse({ climate, insulation, ceiling }) {
+export default function HeatLossHouse({ climate, insulation, ceiling, doors, windows }) {
 
   const base = useMemo(() => climate * insulation, [climate, insulation]);
 
@@ -101,22 +101,15 @@ export default function HeatLossHouse({ climate, insulation, ceiling }) {
     <div style={{ width: "100%", height: 380, marginTop: 20 }}>
       <Canvas shadows camera={{ position: [4, 3, 4], fov: 50 }}>
         
-        {/* LIGHTS */}
-        <ambientLight intensity={0.7} />
-        <directionalLight
-          position={[5, 6, 5]}
-          castShadow
-          intensity={1.4}
-        />
-{/* GLOBAL LIGHTING */}
-<ambientLight intensity={0.4} />
+       {/* Ambient */}
+<ambientLight intensity={0.45} />
 
-{/* REALISTIC SUN */}
+{/* Sunlight */}
 <directionalLight
   castShadow
-  intensity={2}
-  color={"#fff4d6"}           // слегка тёплый солнечный оттенок
-  position={[5, 8, 5]}        // высокое положение как реальное солнце
+  intensity={1.8}
+  color={"#fff4d6"}
+  position={[5, 8, 5]}
   shadow-mapSize-width={2048}
   shadow-mapSize-height={2048}
   shadow-camera-near={1}
@@ -126,6 +119,7 @@ export default function HeatLossHouse({ climate, insulation, ceiling }) {
   shadow-camera-top={6}
   shadow-camera-bottom={-6}
 />
+
 
 {/* OPTIONAL GROUND FOR SHADOWS */}
 <mesh
