@@ -4,6 +4,8 @@ import { useState } from "react";
 import BoilerChart from "./BoilerChart";
 import {  SunSnow, BrickWallFire, Ruler, Printer, SquareCheckBig} from "lucide-react";
 import HeatLoss3D from "./HeatLoss3D";
+import EbayBoilerCards from "./EbayBoilerCards";
+
 export default function BoilerCalculator(){
 
 const [area, setArea] = useState('');
@@ -14,6 +16,7 @@ const [insulation, setInsulation] = useState("1.0");
 const [ceiling, setCeiling] = useState("standard");
 const [power, setPower] = useState(null);
 const [history, setHistory] = useState([]);
+
 
 const calculatePower = () => {
     if(!area && !doors && !windows || isNaN(area) ||isNaN(doors)||isNaN(windows)){
@@ -138,6 +141,7 @@ return(
   doors={doors}
   windows={windows}
 /></div>
+      <EbayBoilerCards power={power}/>
     </div>
 
   

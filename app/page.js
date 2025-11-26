@@ -2,7 +2,7 @@
 import BoilerCalculator from '../components/BoilerCalculator';
 import Chat from '../components/Chat';
 import {Calculator, MessageCircle, Flame, BarChart3, Info, Heater } from "lucide-react";
-
+import EbayBoilerCards from '../components/EbayBoilerCards';
  
 
 export const metadata = {
@@ -67,7 +67,7 @@ export default function Home({history, setHistory}) {
      
 
           <BoilerCalculator/>
-         
+   
         </section>
         {/* <section id="chart">
         <h2>  <BarChart3 size={20} /> Graph: Power vs. Area</h2>
