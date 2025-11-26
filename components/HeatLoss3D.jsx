@@ -10,10 +10,10 @@ import HeatLegend from "./HeatLegend";
 function heatColor(loss) {
   const t = Math.min(1, Math.max(0, (loss - 0.7) / (1.6 - 0.7)));
   const colors = [
-    [0, 0.4, 1],   // синий
-    [0, 0.9, 0.3], // зеленый
-    [1, 0.8, 0],   // жёлтый
-    [1, 0, 0],     // красный
+
+    [0.474, 0.682, 0.545], // зеленый
+    [0.855, 0.788, 0.514],   // жёлтый
+    [0.816, 0.275, 0.275],     // красный
   ];
   const idx = Math.floor(t * 3);
   const f = t * 3 - idx;

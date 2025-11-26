@@ -1,9 +1,9 @@
 export default function HeatLegend() {
   const legend = [
-    { color: "rgb(0, 102, 255)", label: "Холодно (синий)" },
-    { color: "rgb(0, 230, 80)", label: "Норма (зелёный)" },
-    { color: "rgb(255, 204, 0)", label: "Плохо (жёлтый)" },
-    { color: "rgb(255, 0, 0)",     label: "Очень плохо (красный)" },
+   
+    { color: "rgb(121, 174, 139)", label: "Normal (green)" },
+    { color: "rgb(218, 201, 131)", label: "Cold (yellow)" },
+    { color: "rgb(208, 70, 70)",     label: "Very cold (red)" },
   ];
 
   return (
