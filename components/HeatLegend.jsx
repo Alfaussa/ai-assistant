@@ -9,13 +9,13 @@ export default function HeatLegend() {
   return (
     <div style={{
       display: "flex",
-      gap: "14px",
-      marginTop: "12px",
+      gap: "8px",
+      marginTop: "40px",
       flexWrap: "wrap",
       alignItems: "center",
     }}>
       {legend.map((item, i) => (
-        <div key={i} style={{ display: "flex", alignItems: "center", gap: 8 }}>
+        <div key={i} style={{ display: "flex", alignItems: "center", gap: 7 }}>
           <div
             style={{
               width: 22,

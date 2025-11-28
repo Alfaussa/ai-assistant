@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import BoilerChart from "./BoilerChart";
-import {  SunSnow, BrickWallFire, Ruler, Printer, SquareCheckBig} from "lucide-react";
+import {  SunSnow, BrickWallFire, Ruler, Printer, SquareCheckBig, Rotate3d} from "lucide-react";
 import HeatLoss3D from "./HeatLoss3D";
 import EbayBoilerCards from "./EbayBoilerCards";
 
@@ -55,9 +55,10 @@ result *= windowFactor;
     window.print();
 }
 return(
-
-   <div style={{ maxWidth: 400, margin: "20px auto", padding: 20, border: "1px solid #ccc", borderRadius: 8 }}>
-
+<div >
+   <div style={{ display:"flex", flexWrap: "wrap"}}>
+    <div style={{ maxWidth: 400, margin: "20px auto", padding: 20, border: "1px solid #ccc", borderRadius: 8 }}>
+ 
       <label>
         House area (m²):
         <input
@@ -127,20 +128,27 @@ return(
           <SquareCheckBig /> Recommended boiler power: <strong>{power} кВт</strong>
         </p>
       )}
-       <BoilerChart history={history} setHistory={setHistory}/>
+      </div>
 
-        <button onClick={printReport} style={{ padding: "8px 12px", display: "flex",gap: "8px", alignItems: "center"}}>
-        <Printer /> Print report
-      </button>
-<div>
-       <HeatLoss3D
+ <div style={{ maxWidth: 400, margin: "20px auto", padding: 20, border: "1px solid #ccc", borderRadius: 8 }}>
+   <div style={{}}>
+  <p><Rotate3d />3D model</p></div>
+  <HeatLoss3D
   area={area}
   climate={climate}
   insulation={insulation}
   ceiling={ceiling}
   doors={doors}
   windows={windows}
-/></div>
+/>
+</div> 
+</div >
+       <BoilerChart  history={history} setHistory={setHistory}/>
+
+        <button onClick={printReport} style={{ padding: "8px 12px", display: "flex",gap: "8px", alignItems: "center"}}>
+        <Printer /> Print report
+      </button>
+
       <EbayBoilerCards power={power}/>
     </div>
 

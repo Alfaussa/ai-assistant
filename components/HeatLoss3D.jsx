@@ -145,7 +145,7 @@ export default function HeatLossHouse({ climate, insulation, ceiling, doors, win
   const doorLoss = base * 1.4;
 
   return (
-    <div style={{ width: "100%", height: 380, marginTop: 20 }}>
+    <div style={{ width: "100%", height: 300}}>
       <Canvas shadows camera={{ position: [4, 3, 4], fov: 50 }}>
 
         <ambientLight intensity={0.45} />
