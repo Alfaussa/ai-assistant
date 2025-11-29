@@ -24,7 +24,7 @@ const clearHistory = () => setHistory([]);
     return(
 <div>
   
-        <div style={{ marginTop:60 }}>
+        <div style={{ marginTop:40 }}>
           <h3><ChartColumn /> Calculation history</h3>
 <div style={{width: "90%", margin: 30, padding: 20, border: "1px solid #ccc", borderRadius: 8 }}>
  
@@ -74,7 +74,7 @@ const clearHistory = () => setHistory([]);
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="power" fill="#2563eb" />
+        <Bar dataKey="power" fill="#6d81aeff" />
       </BarChart>
         </div>
       

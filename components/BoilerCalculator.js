@@ -44,7 +44,7 @@ result *= windowFactor;
         insulation: insulation,
         ceiling: ceiling,
         power: Number(finalResult),
-        name: 'calc no:' + (history.length + 1),
+        name: '№' + (history.length + 1),
         }
      
     ])
@@ -145,7 +145,7 @@ return(
 </div >
        <BoilerChart  history={history} setHistory={setHistory}/>
 
-        <button onClick={printReport} style={{ padding: "8px 12px", display: "flex",gap: "8px", alignItems: "center"}}>
+        <button onClick={printReport} style={{ margin:"20px 50px", padding: "8px 12px", display: "flex",gap: "8px", alignItems: "center"}}>
         <Printer /> Print report
       </button>
 
