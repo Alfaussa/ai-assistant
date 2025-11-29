@@ -8,7 +8,7 @@ import {ChartColumn, Trash } from "lucide-react";
 export default function BoilerChart({history, setHistory}){
 
   if (!history || history.length === 0) {
-    return <p style={{ marginTop: 60, display: "flex", alignItems: "center", gap: "8px"  }}><ChartColumn/> No data to display</p>;
+    return <p style={{ margin: 50, display: "flex", alignItems: "center", gap: "8px"  }}><ChartColumn/> No data to display</p>;
   }
 //  const data = [
 //     { area: 50, power: 5 },
@@ -26,20 +26,26 @@ const clearHistory = () => setHistory([]);
   
         <div style={{ marginTop:60 }}>
           <h3><ChartColumn /> Calculation history</h3>
-
+<div style={{width: "90%", margin: 30, padding: 20, border: "1px solid #ccc", borderRadius: 8 }}>
+ 
           <button
+          
         onClick={clearHistory}
         style={{
-          marginBottom: 10,
-          background: "#ef4444",
+          display:"flex",
+          marginBottom: 30,
+          background: "rgb(208, 70, 70)",
           color: "white",
-          padding: "6px 12px",
+          padding: "8px 12px",
           borderRadius: "6px",
+          gap: "8px", 
+          alignItems: "center"
+         
         }}
       >
         <Trash />Clear history
       </button>
-          <table border="1" cellPadding="6" style={{ marginBottom: 20, borderCollapse: "collapse" }}>
+          <table border="1" cellPadding="10" style={{ marginBottom: 40, borderCollapse: "collapse" }}>
             <thead>
               <tr>
                 <th>Area (m²)</th>
@@ -73,6 +79,6 @@ const clearHistory = () => setHistory([]);
         </div>
       
 
-      </div>
+      </div></div> 
       )
 }
