@@ -1,9 +1,8 @@
 
-import BoilerCalculator from '../components/BoilerCalculator';
-import Chat from '../components/Chat';
+import BoilerCalculator from '../components/BoilerCalculator.js';
+import Chat from '../components/Chat.jsx';
 import {Calculator, MessageCircle, Flame, BarChart3, Info, Heater } from "lucide-react";
-import EbayBoilerCards from '../components/EbayBoilerCards';
- 
+  
 
 export const metadata = {
   title: 'My page title',
@@ -23,17 +22,16 @@ export default function Home({history, setHistory}) {
 
     
       }}>
-      {/*header*/}
+    
       <header style={{position: "fixed", top: 0, left: 0,width: "100%",
-    background: "rgba(255, 255, 255, 0.9)", // немного прозрачности
-    backdropFilter: "blur(8px)", // мягкий эффект стекла
-    display: "flex",
+    background: "rgba(255, 255, 255, 0.9)",
+    backdropFilter: "blur(8px)",
     justifyContent: "space-between",
     alignItems: "center",
     padding: "8px 16px",
     boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
       flexWrap: "wrap", 
-    zIndex: 1000, // чтобы всегда был поверх
+    zIndex: 1000, 
   }}>
         <div style={{display:'flex'
           
@@ -69,13 +67,6 @@ export default function Home({history, setHistory}) {
           <BoilerCalculator/>
    
         </section>
-        {/* <section id="chart">
-        <h2>  <BarChart3 size={20} /> Graph: Power vs. Area</h2>
-        <BoilerChartPariatur cillum anim ad reprehenderit dolore. Reprehenderit labore dolore deserunt aliqua reprehenderit ea tempor minim ea irure ea. Consequat ea qui enim voluptate consequat in enim esse nulla ex.
-        data={history}
-        setHistory={setHistory}~`
-        />
-      </section> */}
         <section id="about">
           <h2><Info size={20} /> About</h2>
           <p>This project helps calculate heating and ask your questions.
