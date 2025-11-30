@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import {Check} from "lucide-react";
+import {Check, MoveRight} from "lucide-react";
 
 
 export default function EbayBoilerCards({ power }) {
@@ -89,7 +89,7 @@ export default function EbayBoilerCards({ power }) {
             target="_blank"
             style={{ color: "#16191c", fontSize: 13 }}
           >
-            View on eBay →
+            View on eBay <MoveRight />
           </a>
     
         </div>
