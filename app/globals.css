@@ -1,6 +1,10 @@
 
 
 /* Глобальные стили */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -23,8 +27,9 @@ nav a {
   color: #1f2937;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   transition: color 0.2s;
+  
 }
 
 nav a:hover {
