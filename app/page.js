@@ -1,5 +1,5 @@
 
-import BoilerCalculator from '../components/BoilerCalculator.js';
+import BoilerCalculator from '../components/BoilerCalculator.jsx';
 import Chat from '../components/Chat.jsx';
 import { Calculator, MessageCircle, Flame, BarChart3, Info, Heater } from "lucide-react";
 
@@ -22,6 +22,7 @@ export default function Home({ history, setHistory }) {
 
       <header style={{
         position: "fixed", top: 0, left: 0, width: "100%",
+        display:"flex",
         background: "rgba(255, 255, 255, 0.9)",
         backdropFilter: "blur(8px)",
         justifyContent: "space-between",

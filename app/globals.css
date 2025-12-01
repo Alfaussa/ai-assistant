@@ -80,3 +80,10 @@ footer {
 p {
   text-align: justify
 }
+input {
+   width: 100%;
+  padding: 8px; 
+  marginTop: 8px;
+  marginBottom: 12px 
+}
+
