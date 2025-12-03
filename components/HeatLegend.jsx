@@ -1,19 +1,20 @@
 export default function HeatLegend() {
   const legend = [
-   
     { color: "rgb(121, 174, 139)", label: "Normal (green)" },
     { color: "rgb(218, 201, 131)", label: "Cold (yellow)" },
-    { color: "rgb(208, 70, 70)",     label: "Very cold (red)" },
+    { color: "rgb(208, 70, 70)", label: "Very cold (red)" },
   ];
 
   return (
-    <div style={{
-      display: "flex",
-      gap: "8px",
-      marginTop: "40px",
-      flexWrap: "wrap",
-      alignItems: "center",
-    }}>
+    <div
+      style={{
+        display: "flex",
+        gap: "8px",
+        marginTop: "40px",
+        flexWrap: "wrap",
+        alignItems: "center",
+      }}
+    >
       {legend.map((item, i) => (
         <div key={i} style={{ display: "flex", alignItems: "center", gap: 7 }}>
           <div
