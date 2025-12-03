@@ -86,4 +86,10 @@ input {
   marginTop: 8px;
   marginBottom: 12px 
 }
+.icon {
+  marginBottom: 10px;
+  display: flex;
+  gap: 8px;
+  alignItems: center;
+}
 

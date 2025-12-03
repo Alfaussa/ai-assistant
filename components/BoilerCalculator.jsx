@@ -2,15 +2,21 @@
 
 import { useState } from "react";
 import BoilerChart from "./BoilerChart";
-import { SunSnow, BrickWallFire, Ruler, Printer, SquareCheckBig, Rotate3d } from "lucide-react";
+import {
+  SunSnow,
+  BrickWallFire,
+  Ruler,
+  Printer,
+  SquareCheckBig,
+  Rotate3d,
+} from "lucide-react";
 import HeatLoss3D from "./HeatLoss3D";
 import EbayBoilerCards from "./EbayBoilerCards";
 
 export default function BoilerCalculator() {
-
-  const [area, setArea] = useState('');
-  const [doors, setDoors] = useState('');
-  const [windows, setWindows] = useState('');
+  const [area, setArea] = useState("");
+  const [doors, setDoors] = useState("");
+  const [windows, setWindows] = useState("");
   const [climate, setClimate] = useState("1.0");
   const [insulation, setInsulation] = useState("1.0");
   const [ceiling, setCeiling] = useState("standard");
@@ -18,7 +24,12 @@ export default function BoilerCalculator() {
   const [history, setHistory] = useState([]);
 
   const calculatePower = () => {
-    if ((!area && !doors && !windows) || isNaN(area) || isNaN(doors) || isNaN(windows)) {
+    if (
+      (!area && !doors && !windows) ||
+      isNaN(area) ||
+      isNaN(doors) ||
+      isNaN(windows)
+    ) {
       setPower("Enter correct number");
       return;
     }
@@ -70,65 +81,65 @@ export default function BoilerCalculator() {
         >
           <label>
             House area (m²):
-            <input type="number" value={area} onChange={(e) => setArea(e.target.value)} />
+            <input
+              type="number"
+              value={area}
+              onChange={(e) => setArea(e.target.value)}
+            />
           </label>
 
           <div style={{ display: "flex", gap: "60px" }}>
             <label>
               Windows:
-              <input type="number" value={windows} onChange={(e) => setWindows(e.target.value)} />
+              <input
+                type="number"
+                value={windows}
+                onChange={(e) => setWindows(e.target.value)}
+              />
             </label>
             <label>
               Doors:
-              <input type="number" value={doors} onChange={(e) => setDoors(e.target.value)} />
+              <input
+                type="number"
+                value={doors}
+                onChange={(e) => setDoors(e.target.value)}
+              />
             </label>
           </div>
 
-          <div
-            style={{
-              marginBottom: 10,
-              display: "flex",
-              gap: "8px",
-              alignItems: "center",
-            }}
-          >
+          <div className="icon">
             <SunSnow />
             <label>Climate:</label>
-            <select value={climate} onChange={(e) => setClimate(e.target.value)}>
+            <select
+              value={climate}
+              onChange={(e) => setClimate(e.target.value)}
+            >
               <option value="0.9">Warm</option>
               <option value="1.0">Moderate</option>
               <option value="1.2">Cold</option>
             </select>
           </div>
 
-          <div
-            style={{
-              marginBottom: 10,
-              display: "flex",
-              gap: "8px",
-              alignItems: "center",
-            }}
-          >
+          <div className="icon">
             <BrickWallFire />
             <label>Insulation:</label>
-            <select value={insulation} onChange={(e) => setInsulation(e.target.value)}>
+            <select
+              value={insulation}
+              onChange={(e) => setInsulation(e.target.value)}
+            >
               <option value="0.8">Excellent</option>
               <option value="1.0">Average</option>
               <option value="1.2">Poor</option>
             </select>
           </div>
 
-          <div
-            style={{
-              marginBottom: 10,
-              display: "flex",
-              gap: "8px",
-              alignItems: "center",
-            }}
-          >
+          <div className="icon">
             <Ruler />
             <label>Ceiling height:</label>
-            <select value={ceiling} onChange={(e) => setCeiling(e.target.value)}>
+            <select
+              value={ceiling}
+              onChange={(e) => setCeiling(e.target.value)}
+            >
               <option value="standard">Standard (≤ 3 m)</option>
               <option value="high">High (&gt; 3 m)</option>
             </select>
@@ -139,16 +150,9 @@ export default function BoilerCalculator() {
           </button>
 
           {power && (
-            <p
-              style={{
-                marginTop: 15,
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-              }}
-            >
+            <p className="icon">
               <SquareCheckBig /> Recommended boiler power:{" "}
-              <strong>{power} кВт</strong>
+              <strong>{power} kW</strong>
             </p>
           )}
         </div>
@@ -180,16 +184,7 @@ export default function BoilerCalculator() {
 
       <BoilerChart history={history} setHistory={setHistory} />
 
-      <button
-        onClick={printReport}
-        style={{
-          margin: "20px 50px",
-          padding: "8px 12px",
-          display: "flex",
-          gap: "8px",
-          alignItems: "center",
-        }}
-      >
+      <button onClick={printReport} className="icon">
         <Printer /> Print report
       </button>
 
