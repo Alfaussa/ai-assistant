@@ -68,14 +68,14 @@ export default function Chat() {
           )}
         </div>
       </div>
-      <div style={{ display: "flex", gap: 8 }}>
+      <div style={{ display: "flex", justifyContent:"space-between" }}>
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && sendMessage()}
           placeholder="Ask your question..."
-          style={{ width: "80%", padding: 8, marginRight: 10 }}
+          style={{ width: "90%", padding: 8, marginRight: 10 }}
         />
         <button onClick={sendMessage} disabled={loading}>
           Send

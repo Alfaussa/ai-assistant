@@ -43,6 +43,7 @@ input, button, select {
   border-radius: 10px;
   border: 1px solid #c3c1c1;
   padding: 8px 10px;
+  margin: 10px 0 10px;
 }
 
 button {
@@ -82,14 +83,15 @@ p {
 }
 input {
    width: 100%;
-  padding: 8px; 
-  marginTop: 8px;
-  marginBottom: 12px 
+
 }
 .icon {
-  marginBottom: 10px;
+  margin-bottom: 10px;
   display: flex;
   gap: 8px;
-  alignItems: center;
+  align-items: center;
+  padding:10px 0 10px;
 }
-
+.selection {
+  margin-bottom:10px;
+}

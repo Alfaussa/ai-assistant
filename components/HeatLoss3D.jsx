@@ -10,10 +10,9 @@ import HeatLegend from "./HeatLegend";
 function heatColor(loss) {
   const t = Math.min(1, Math.max(0, (loss - 0.7) / (1.6 - 0.7)));
   const colors = [
-
     [0.474, 0.682, 0.545], // зеленый
-    [0.855, 0.788, 0.514],   // жёлтый
-    [0.816, 0.275, 0.275],     // красный
+    [0.855, 0.788, 0.514], // жёлтый
+    [0.816, 0.275, 0.275], // красный
   ];
   const idx = Math.floor(t * 3);
   const f = t * 3 - idx;
@@ -60,18 +59,30 @@ function Chimney() {
 
 function getDoorTransform(index, doorsCount, width, depth) {
   const wall = index % 4;
-  const spacing = 0.9;                        
+  const spacing = 0.9;
   const offset = (index % doorsCount) * spacing - (doorsCount * spacing) / 2;
 
   switch (wall) {
     case 0: // SOUTH wall
-      return { position: [offset, -0.4, depth / 2 + 0.06], rotation: [0, 0, 0] };
+      return {
+        position: [offset, -0.4, depth / 2 + 0.06],
+        rotation: [0, 0, 0],
+      };
     case 1: // NORTH wall
-      return { position: [offset, -0.4, -depth / 2 - 0.06], rotation: [0, Math.PI, 0] };
+      return {
+        position: [offset, -0.4, -depth / 2 - 0.06],
+        rotation: [0, Math.PI, 0],
+      };
     case 2: // EAST wall
-      return { position: [width / 2 + 0.06, -0.4, offset], rotation: [0, -Math.PI / 2, 0] };
+      return {
+        position: [width / 2 + 0.06, -0.4, offset],
+        rotation: [0, -Math.PI / 2, 0],
+      };
     case 3: // WEST wall
-      return { position: [-width / 2 - 0.06, -0.4, offset], rotation: [0, Math.PI / 2, 0] };
+      return {
+        position: [-width / 2 - 0.06, -0.4, offset],
+        rotation: [0, Math.PI / 2, 0],
+      };
   }
 }
 
@@ -117,23 +128,46 @@ function PerimeterWindows({ windows, windowLoss }) {
   return (
     <>
       {Array.from({ length: countPerWall }).map((_, i) => (
-        <Window key={"n" + i} loss={windowLoss} position={[-0.7 + i * 0.7, 0.2, -1.07]} />
+        <Window
+          key={"n" + i}
+          loss={windowLoss}
+          position={[-0.7 + i * 0.7, 0.2, -1.07]}
+        />
       ))}
       {Array.from({ length: countPerWall }).map((_, i) => (
-        <Window key={"s" + i} loss={windowLoss} position={[-0.7 + i * 0.7, 0.2, 1.07]} />
+        <Window
+          key={"s" + i}
+          loss={windowLoss}
+          position={[-0.7 + i * 0.7, 0.2, 1.07]}
+        />
       ))}
       {Array.from({ length: countPerWall }).map((_, i) => (
-        <Window key={"e" + i} loss={windowLoss} position={[1.07, 0.2, -0.7 + i * 0.7]} rotation={[0, Math.PI / 2, 0]} />
+        <Window
+          key={"e" + i}
+          loss={windowLoss}
+          position={[1.07, 0.2, -0.7 + i * 0.7]}
+          rotation={[0, Math.PI / 2, 0]}
+        />
       ))}
       {Array.from({ length: countPerWall }).map((_, i) => (
-        <Window key={"w" + i} loss={windowLoss} position={[-1.07, 0.2, -0.7 + i * 0.7]} rotation={[0, -Math.PI / 2, 0]} />
+        <Window
+          key={"w" + i}
+          loss={windowLoss}
+          position={[-1.07, 0.2, -0.7 + i * 0.7]}
+          rotation={[0, -Math.PI / 2, 0]}
+        />
       ))}
     </>
   );
 }
 
-export default function HeatLossHouse({ climate, insulation, ceiling, doors, windows }) {
-
+export default function HeatLossHouse({
+  climate,
+  insulation,
+  ceiling,
+  doors,
+  windows,
+}) {
   const base = useMemo(() => climate * insulation, [climate, insulation]);
 
   // 📌 ДОБАВИЛ width / depth — ОЧЕНЬ ВАЖНО
@@ -145,9 +179,8 @@ export default function HeatLossHouse({ climate, insulation, ceiling, doors, win
   const doorLoss = base * 1.4;
 
   return (
-    <div style={{ width: "100%", height: 300}}>
+    <div style={{ width: "100%", height: 300 }}>
       <Canvas shadows camera={{ position: [4, 3, 4], fov: 50 }}>
-
         <ambientLight intensity={0.45} />
 
         <directionalLight
@@ -158,7 +191,11 @@ export default function HeatLossHouse({ climate, insulation, ceiling, doors, win
         />
 
         {/* Ground */}
-        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.82, 0]} receiveShadow>
+        <mesh
+          rotation={[-Math.PI / 2, 0, 0]}
+          position={[0, -0.82, 0]}
+          receiveShadow
+        >
           <planeGeometry args={[20, 20]} />
           <meshStandardMaterial color="#e8e8e8" />
         </mesh>
@@ -176,7 +213,13 @@ export default function HeatLossHouse({ climate, insulation, ceiling, doors, win
         {/* DOORS */}
         {Array.from({ length: doors }).map((_, i) => {
           const t = getDoorTransform(i, doors, width, depth);
-          return <Door key={"door" + i} position={t.position} rotation={t.rotation} />;
+          return (
+            <Door
+              key={"door" + i}
+              position={t.position}
+              rotation={t.rotation}
+            />
+          );
         })}
 
         {/* WINDOWS */}

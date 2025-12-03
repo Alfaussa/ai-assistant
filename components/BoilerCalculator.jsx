@@ -108,8 +108,10 @@ export default function BoilerCalculator() {
           </div>
 
           <div className="icon">
-            <SunSnow />
-            <label>Climate:</label>
+          
+              <SunSnow />
+              <label>Climate:</label>
+          
             <select
               value={climate}
               onChange={(e) => setClimate(e.target.value)}
@@ -121,8 +123,10 @@ export default function BoilerCalculator() {
           </div>
 
           <div className="icon">
-            <BrickWallFire />
-            <label>Insulation:</label>
+           
+              <BrickWallFire />
+              <label>Insulation:</label>
+            
             <select
               value={insulation}
               onChange={(e) => setInsulation(e.target.value)}
@@ -134,8 +138,10 @@ export default function BoilerCalculator() {
           </div>
 
           <div className="icon">
-            <Ruler />
-            <label>Ceiling height:</label>
+           
+              <Ruler />
+              <label>Ceiling height:</label>
+        
             <select
               value={ceiling}
               onChange={(e) => setCeiling(e.target.value)}
