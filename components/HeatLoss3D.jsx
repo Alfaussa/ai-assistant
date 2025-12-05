@@ -4,7 +4,7 @@ import React, { useMemo } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useTexture } from "@react-three/drei";
 import * as THREE from "three";
-import HeatLegend from "./HeatLegend";
+
 
 // Цвет теплопотерь
 function heatColor(loss) {
@@ -227,8 +227,7 @@ export default function HeatLossHouse({
 
         <OrbitControls makeDefault />
       </Canvas>
-
-      <HeatLegend />
+   
     </div>
   );
 }

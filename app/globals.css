@@ -86,11 +86,11 @@ input {
 
 }
 .icon {
-  margin-bottom: 10px;
+
   display: flex;
   gap: 8px;
   align-items: center;
-  padding:10px 0 10px;
+
 }
 .selection {
   margin-bottom:10px;

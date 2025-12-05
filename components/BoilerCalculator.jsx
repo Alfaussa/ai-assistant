@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import BoilerChart from "./BoilerChart";
+import HeatLegend from "./HeatLegend";
 import {
   SunSnow,
   BrickWallFire,
@@ -151,7 +152,7 @@ export default function BoilerCalculator() {
             </select>
           </div>
 
-          <button onClick={calculatePower} style={{ padding: "8px 12px" }}>
+          <button onClick={calculatePower} style={{ marginTop:20}}>
             Calculate
           </button>
 
@@ -166,6 +167,7 @@ export default function BoilerCalculator() {
         {/* 3D MODEL */}
         <div
           style={{
+           
             maxWidth: 400,
             margin: "20px auto",
             padding: 20,
@@ -173,7 +175,7 @@ export default function BoilerCalculator() {
             borderRadius: 8,
           }}
         >
-          <p>
+          <p >
             <Rotate3d /> 3D model
           </p>
 
@@ -185,6 +187,8 @@ export default function BoilerCalculator() {
             doors={doors}
             windows={windows}
           />
+             <HeatLegend />
+        
         </div>
       </div>
 

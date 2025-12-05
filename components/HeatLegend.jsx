@@ -10,7 +10,7 @@ export default function HeatLegend() {
       style={{
         display: "flex",
         gap: "8px",
-        marginTop: "40px",
+        marginTop: "10px",
         flexWrap: "wrap",
         alignItems: "center",
       }}
