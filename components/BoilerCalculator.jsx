@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import BoilerChart from "./BoilerChart";
+
 import HeatLegend from "./HeatLegend";
 import {
   SunSnow,
@@ -12,7 +12,7 @@ import {
   Rotate3d,
 } from "lucide-react";
 import HeatLoss3D from "./HeatLoss3D";
-import EbayBoilerCards from "./EbayBoilerCards";
+
 
 export default function BoilerCalculator() {
   const [area, setArea] = useState("");
@@ -64,9 +64,7 @@ export default function BoilerCalculator() {
     ]);
   };
 
-  const printReport = () => {
-    window.print();
-  };
+
 
   return (
     <div>
@@ -192,13 +190,8 @@ export default function BoilerCalculator() {
         </div>
       </div>
 
-      <BoilerChart history={history} setHistory={setHistory} />
+      
 
-      <button onClick={printReport} className="icon">
-        <Printer /> Print report
-      </button>
-
-      <EbayBoilerCards power={power} />
     </div>
   );
 }

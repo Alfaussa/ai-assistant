@@ -26,7 +26,9 @@ export default function BoilerChart({ history, setHistory }) {
     );
   }
 
-
+  const printReport = () => {
+    window.print();
+  };
   const clearHistory = () => setHistory([]);
   console.log(history);
 
@@ -98,6 +100,7 @@ export default function BoilerChart({ history, setHistory }) {
           </BarChart>
         </div>
       </div>
+         <button onClick={printReport} className="icon">   <Printer /> Print report</button>
     </div>
   );
 }

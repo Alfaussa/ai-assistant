@@ -195,8 +195,5 @@ return (
 
     <OrbitControls makeDefault />
   </Canvas>
-</div>
-```
-
-);
+ </div> )
 }
