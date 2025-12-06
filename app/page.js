@@ -1,4 +1,5 @@
 
+
 import BoilerCalculator from '../components/BoilerCalculator.jsx';
 import Chat from '../components/Chat.jsx';
 import { Calculator, MessageCircle, Flame, BarChart3, Info, Heater, Printer } from "lucide-react";
@@ -8,7 +9,7 @@ export const metadata = {
   title: 'My page title',
   description: 'My page description',
 }
-export default function Home({ history, setHistory, power }) {
+export default function Home({ history, setHistory, power}) {
 
 
   return (
@@ -73,7 +74,7 @@ export default function Home({ history, setHistory, power }) {
            
         </section>
 <section>
-      <EbayBoilerCards power={power} />
+      <EbayBoilerCards power={power}/>
 </section>
         <section id="about">
           <h2><Info size={20} /> About</h2>

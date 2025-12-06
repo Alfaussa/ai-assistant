@@ -41,7 +41,7 @@ function Door({ position = [0, 0, 0], rotation = [0, 0, 0] }) {
       rotation={rotation}
       castShadow
     >
-      <boxGeometry args={[0.8, 1.8, 0.05]} />
+      <boxGeometry args={[0.8, 1.5, 0.05]} />
       <meshStandardMaterial color="#603000" />
     </mesh>
   );
@@ -111,7 +111,7 @@ function getDoorTransform(index, doorsCount, width, depth) {
   const stepW = width / (perWall + 1);
   const stepD = depth / (perWall + 1);
 
-  const y = -0.4 + 0.45; // исправлено
+  const y = -0.8+ 0.35; // исправлено
 
   switch (wall) {
     case 0:
