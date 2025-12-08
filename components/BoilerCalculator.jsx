@@ -13,14 +13,14 @@ import {
 import HeatLoss3D from "./HeatLoss3D";
 
 
-export default function BoilerCalculator({ history, setHistory }) {
+export default function BoilerCalculator({ history, setHistory, power, setPower }) {
   const [area, setArea] = useState("");
   const [doors, setDoors] = useState("");
   const [windows, setWindows] = useState("");
   const [climate, setClimate] = useState("1.0");
   const [insulation, setInsulation] = useState("1.0");
   const [ceiling, setCeiling] = useState("standard");
-  const [power, setPower] = useState(null);
+  
 
   const calculatePower = () => {
     if (

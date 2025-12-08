@@ -2,7 +2,7 @@
 
 
 import Chat from '../components/Chat.jsx';
-import { Calculator, MessageCircle, Flame, BarChart3, Info, Heater, Printer } from "lucide-react";
+import { Calculator, MessageCircle, Flame, BarChart3, Info, Heater, ShoppingBag  } from "lucide-react";
 import EbayBoilerCards from "../components/EbayBoilerCards.jsx";
 import ClientContainer from '../components/ClientContainer.jsx';
 
@@ -49,6 +49,9 @@ export default function Home({ history, setHistory, power}) {
           </a>
           <a href="#chart" >
             <BarChart3 size={20} /> Graph
+          </a>
+           <a href="#cards" >
+            <ShoppingBag size={20} /> Offers
           </a>
           <a href="#about" >
             <Info size={20} /> About
