@@ -8,7 +8,7 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
-import { ChartColumn, Trash } from "lucide-react";
+import { ChartColumn, Trash, Printer} from "lucide-react";
 
 export default function BoilerChart({ history, setHistory }) {
   if (!history || history.length === 0) {

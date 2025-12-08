@@ -7,14 +7,13 @@ import {
   SunSnow,
   BrickWallFire,
   Ruler,
-  Printer,
   SquareCheckBig,
   Rotate3d,
 } from "lucide-react";
 import HeatLoss3D from "./HeatLoss3D";
 
 
-export default function BoilerCalculator() {
+export default function BoilerCalculator({ history, setHistory }) {
   const [area, setArea] = useState("");
   const [doors, setDoors] = useState("");
   const [windows, setWindows] = useState("");
@@ -22,7 +21,6 @@ export default function BoilerCalculator() {
   const [insulation, setInsulation] = useState("1.0");
   const [ceiling, setCeiling] = useState("standard");
   const [power, setPower] = useState(null);
-  const [history, setHistory] = useState([]);
 
   const calculatePower = () => {
     if (

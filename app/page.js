@@ -1,10 +1,11 @@
 
 
-import BoilerCalculator from '../components/BoilerCalculator.jsx';
+
 import Chat from '../components/Chat.jsx';
 import { Calculator, MessageCircle, Flame, BarChart3, Info, Heater, Printer } from "lucide-react";
-import BoilerChart from "../components/BoilerChart";
 import EbayBoilerCards from "../components/EbayBoilerCards.jsx";
+import ClientContainer from '../components/ClientContainer.jsx';
+
 export const metadata = {
   title: 'My page title',
   description: 'My page description',
@@ -66,11 +67,9 @@ export default function Home({ history, setHistory, power}) {
             <Calculator />Boiler power calculator</h2>
 
 
-          <BoilerCalculator />
+        <ClientContainer/>
 
-        </section>
-        <section id="chart">
-          <BoilerChart history={history} setHistory={setHistory} />
+       
            
         </section>
 <section>
