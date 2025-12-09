@@ -16,7 +16,7 @@ export async function GET() {
   const basic = Buffer.from(`${clientId}:${clientSecret}`).toString("base64");
 
   try {
-    // Используем встроенный Web Fetch API — без node-fetch
+   
     const resp = await fetch("https://api.ebay.com/identity/v1/oauth2/token", {
       method: "POST",
       headers: {

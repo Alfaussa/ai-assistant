@@ -6,9 +6,8 @@ export async function GET(req) {
     return Response.json({ error: "Missing q parameter" }, { status: 400 });
   }
 
-  // Получаем токен через HTTP, а не импортом
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_URL;
-  const tokenUrl = `https://${baseUrl}/api/ebay/token`;
+  // Гарантированный правильный абсолютный URL
+  const tokenUrl = `${url.origin}/api/ebay/token`;
 
   const tokenResp = await fetch(tokenUrl);
   if (!tokenResp.ok) {
