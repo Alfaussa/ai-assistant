@@ -1,5 +1,3 @@
-import { GET as getToken } from "../token/route";
-
 export async function GET(req) {
   const url = new URL(req.url);
   const q = url.searchParams.get("q");
@@ -8,21 +6,28 @@ export async function GET(req) {
     return Response.json({ error: "Missing q parameter" }, { status: 400 });
   }
 
-  // ⬇ Без fetch — вызываем напрямую
-  const tokenResp = await getToken(req);
+  // Получаем токен через HTTP, а не импортом
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_URL;
+  const tokenUrl = `https://${baseUrl}/api/ebay/token`;
 
+  const tokenResp = await fetch(tokenUrl);
   if (!tokenResp.ok) {
-    const errText = await tokenResp.text();
-    return Response.json({ error: "Failed to fetch token", detail: errText }, { status: 500 });
+    const err = await tokenResp.text();
+    return Response.json(
+      { error: "Failed to fetch token", detail: err },
+      { status: 500 }
+    );
   }
 
   const { access_token } = await tokenResp.json();
 
   if (!access_token) {
-    return Response.json({ error: "No access token" }, { status: 500 });
+    return Response.json({ error: "No access token returned" }, { status: 500 });
   }
 
-  const searchUrl = `https://api.ebay.com/buy/browse/v1/item_summary/search?q=${encodeURIComponent(q)}&limit=3`;
+  const searchUrl = `https://api.ebay.com/buy/browse/v1/item_summary/search?q=${encodeURIComponent(
+    q
+  )}&limit=3`;
 
   const resp = await fetch(searchUrl, {
     headers: {
@@ -33,7 +38,10 @@ export async function GET(req) {
 
   if (!resp.ok) {
     const text = await resp.text();
-    return Response.json({ error: "eBay search failed", detail: text }, { status: resp.status });
+    return Response.json(
+      { error: "eBay search failed", detail: text },
+      { status: resp.status }
+    );
   }
 
   const data = await resp.json();
@@ -44,9 +52,7 @@ export async function GET(req) {
     price: it.price?.value,
     currency: it.price?.currency,
     image:
-      it.thumbnailImages?.[0]?.imageUrl ||
-      it.image?.imageUrl ||
-      null,
+      it.thumbnailImages?.[0]?.imageUrl || it.image?.imageUrl || null,
     itemWebUrl: it.itemWebUrl,
     condition: it.condition,
     seller: it.seller?.username || null,
