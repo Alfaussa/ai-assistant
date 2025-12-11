@@ -35,16 +35,16 @@ OPENAI_API_KEY=your_openai_key
 
 npm run dev
 
-# Project Structure
+## Project Structure
 
-/src
-  /components      — UI components
-  /pages           — pages
-  /utils           — calculation functions and helpers
-  /styles          — project styles
-.gitignore
-README.md
-package.json
+/src <br>
+        /components      — UI components <br>
+  /pages           — pages <br>
+  /utils           — calculation functions and helpers <br>
+  /styles          — project styles <br>
+.gitignore <br>
+README.md <br>
+package.json <br>
 
 ## Contributing
 
