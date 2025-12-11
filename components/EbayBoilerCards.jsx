@@ -12,7 +12,7 @@ export default function EbayBoilerCards({ power }) {
 
     setLoading(true);
 
-    // Запрос к backend API
+
     fetch(`/api/ebay/search?q=boiler ${power} kW`)
       .then((res) => res.json())
       .then((data) => {
