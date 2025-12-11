@@ -17,6 +17,7 @@ export default function ClientContainer() {
       <section id="chart">
         <BoilerChart history={history} setHistory={setHistory} />
       </section>
+      
         <section id="cards">
         <EbayBoilerCards power={power} />
       </section>
