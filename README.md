@@ -36,16 +36,19 @@ OPENAI_API_KEY=your_openai_key
 npm run dev
 
 ## Project Structure
-
-/src <br>
-        /components      — UI components <br>
-  /pages           — pages <br>
-  /utils           — calculation functions and helpers <br>
-  /styles          — project styles <br>
-.gitignore <br>
-README.md <br>
-package.json <br>
-
+```
+/public         - static files (images, icons, etc.)
+/src
+  /app          - main pages (Next.js app directory)
+  /components   - UI components
+  /lib          - helper functions and API
+  /hooks        - custom React hooks
+  /styles       - CSS 
+.env.local      - environment variables
+package.json
+next.config.js
+README.md
+```
 ## Contributing
 
 Pull requests and ideas are welcome. Improvements to UI, calculations, or AI assistant are encouraged.
