@@ -7,8 +7,8 @@ import EbayBoilerCards from "../components/EbayBoilerCards.jsx";
 import ClientContainer from '../components/ClientContainer.jsx';
 
 export const metadata = {
-  title: 'My page title',
-  description: 'My page description',
+  title: 'Smart boiler selector',
+  description: 'Smart Boiler Selector is a web application that helps users calculate optimal boiler power and receive AI-powered heating recommendations based on home parameters.',
 }
 export default function Home({ history, setHistory, power}) {
 
@@ -80,7 +80,7 @@ export default function Home({ history, setHistory, power}) {
 </section>
         <section id="about">
           <h2><Info size={20} /> About</h2>
-          <p>This project helps calculate heating and ask your questions.
+          <p>Smart Boiler Selector is a modern web application designed to simplify boiler power selection for residential heating systems. The app allows users to calculate required boiler capacity based on house parameters and interact with an AI assistant for personalized heating advice, recommendations, and explanations. It combines calculation logic with an intuitive interface to support informed decision-making.<br/>
             Fugiat exercitation amet ullamco anim magna velit ut veniam consequat consequat commodo reprehenderit ut. Tempor culpa occaecat aliquip sunt do duis deserunt ut consectetur in ad amet elit quis. Nostrud cupidatat aliqua quis elit magna officia dolore magna ea. Dolor ut elit dolor voluptate aliqua veniam exercitation velit elit dolore.
           </p>
         </section>
