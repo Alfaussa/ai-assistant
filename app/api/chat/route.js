@@ -71,7 +71,8 @@ export async function POST(req) {
     });
 
     const reply = completion.choices[0]?.message?.content || "";
-
+console.log("NODE_ENV:", process.env.NODE_ENV);
+console.log("GROQ_API_KEY exists:", !!process.env.GROQ_API_KEY);
     return new Response(
       JSON.stringify({ reply }),
       { headers: { "Content-Type": "application/json" } }
