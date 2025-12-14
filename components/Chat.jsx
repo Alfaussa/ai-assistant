@@ -33,7 +33,7 @@ export default function Chat() {
       setLoading(false);
     }
   };
-
+  
   return (
     <div style={{ maxWidth: 800, margin: "0 auto", padding: 20 }}>
       <div
